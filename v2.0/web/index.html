@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FinSafe-QA V2.0</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="query-band">
+        <div class="brand">
+          <div>
+            <p class="eyebrow">FinSafe-QA V2.0</p>
+            <h1>可信金融数据分析助手</h1>
+          </div>
+          <span class="source">AkShare / 同花顺公开财务数据</span>
+        </div>
+
+        <form id="queryForm" class="query-box">
+          <input
+            id="question"
+            name="question"
+            value="比较凯莱英、药明康德、泰格医药2025年第三季度的销售毛利率，用条形图展示"
+            autocomplete="off"
+          />
+          <button type="submit">分析</button>
+        </form>
+
+        <div class="examples">
+          <button data-q="2025年第三季度，10家医药公司中营业总收入排名前3的公司有哪些？请列出简称和营业总收入（万元）">Top3 收入</button>
+          <button data-q="计算2025年第三季度各公司的资产负债率，找出资产负债率最高的公司，列出简称和资产负债率（%）">资产负债率排名</button>
+          <button data-q="百克生物2022年年报中的资产总额、负债总额、股东权益总额（单位：万元）">资产结构</button>
+          <button data-q="2025年第三季度营业总收入最高的3家企业是哪些？这些企业的研发费用占营业总收入的比例分别是多少？哪家企业的研发效率（营业总收入/研发费用）最高？">研发效率</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel insight-panel">
+          <div class="panel-title">
+            <span>分析结论</span>
+            <strong id="confidence">-</strong>
+          </div>
+          <p id="answer" class="answer">等待分析...</p>
+          <div class="meta">
+            <span id="queryId">Query ID: -</span>
+            <span id="score">Score: -</span>
+          </div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="panel-title">
+            <span>可视化</span>
+            <span id="chartType">-</span>
+          </div>
+          <div id="chart" class="chart"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">分析计划</div>
+          <div id="plan"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">结构化结果</div>
+          <div id="table"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">SQL 可见</div>
+          <pre id="sql">-</pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">可信层</div>
+          <div id="trust"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

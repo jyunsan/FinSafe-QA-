@@ -1,0 +1,280 @@
+:root {
+  --bg: #f5f6f7;
+  --text: #18202a;
+  --muted: #66717d;
+  --line: #d7dde3;
+  --panel: #ffffff;
+  --green: #0d7a61;
+  --blue: #2166a5;
+  --ink: #26323f;
+  --soft: #eef4f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  width: min(1240px, calc(100vw - 32px));
+  margin: 28px auto;
+}
+
+.query-band,
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 8px;
+}
+
+.query-band {
+  padding: 22px;
+}
+
+.brand {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.source {
+  color: var(--muted);
+  font-size: 13px;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.query-box {
+  display: grid;
+  grid-template-columns: 1fr 96px;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+input,
+button {
+  height: 44px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+input {
+  border: 1px solid var(--line);
+  padding: 0 12px;
+}
+
+button {
+  border: 0;
+  background: var(--green);
+  color: white;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.examples button {
+  height: 34px;
+  background: var(--soft);
+  color: var(--green);
+  padding: 0 12px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.panel {
+  padding: 16px;
+  min-width: 0;
+}
+
+.insight-panel {
+  grid-column: 1 / -1;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#confidence,
+#chartType {
+  color: var(--blue);
+}
+
+.answer {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 6px;
+  text-align: left;
+}
+
+.info-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.info-list li {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #2f3c35;
+}
+
+.chart {
+  min-height: 300px;
+}
+
+.chart-title {
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.bars {
+  display: grid;
+  gap: 10px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 92px 1fr 76px;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.bar-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bar-track {
+  height: 16px;
+  background: #e8edf1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-track i {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+}
+
+.bar-row strong {
+  text-align: right;
+  font-size: 12px;
+}
+
+svg {
+  width: 100%;
+  height: 210px;
+  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.axis-labels {
+  position: relative;
+  height: 24px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.axis-labels span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.chart-note,
+.empty {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .brand,
+  .workspace {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .query-box {
+    grid-template-columns: 1fr;
+  }
+
+  .source {
+    white-space: normal;
+  }
+}

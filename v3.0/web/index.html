@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FinSafe-QA V3.0</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="query-band">
+        <div class="brand">
+          <div>
+            <p class="eyebrow">FinSafe-QA V3.0</p>
+            <h1>上下文增强的自主规划问数助手</h1>
+          </div>
+          <span class="source">AkShare / 同花顺公开财务数据</span>
+        </div>
+
+        <form id="queryForm" class="query-box">
+          <input
+            id="question"
+            name="question"
+            value="①找出2025年第三季度资产负债率最低的3家公司；②计算它们的流动比率；③分析这些公司偿债稳健的原因"
+            autocomplete="off"
+          />
+          <button type="submit">分析</button>
+        </form>
+
+        <div class="examples">
+          <button data-q="2025年第三季度营业总收入最高的3家企业是哪些？这些企业的研发费用占营业总收入的比例分别是多少？哪家企业的研发效率最高？">多意图规划</button>
+          <button data-q="那净利润呢">上下文追问</button>
+          <button data-q="针对药明康德：①查询2022-2025年第三季度各期的营业总收入和净利润；②计算各期净利润率；③生成净利润率趋势折线图；④结合研报解释利润率变化的驱动因素">复杂计划</button>
+          <button data-q="集采政策对医学检验服务企业（如迪安诊断）的长期影响如何？请从价格、业务量角度分析">边界规划</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <article class="panel insight-panel">
+          <div class="panel-title">
+            <span>分析结论</span>
+            <strong id="confidence">-</strong>
+          </div>
+          <p id="answer" class="answer">等待分析...</p>
+          <div class="meta">
+            <span id="queryId">Query ID: -</span>
+            <span id="score">Score: -</span>
+          </div>
+        </article>
+
+        <article class="panel chart-panel">
+          <div class="panel-title">
+            <span>可视化</span>
+            <span id="chartType">-</span>
+          </div>
+          <div id="chart" class="chart"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">上下文与自主规划</div>
+          <div id="plan"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">结构化结果</div>
+          <div id="table"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">SQL 可见</div>
+          <pre id="sql">-</pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">可信层</div>
+          <div id="trust"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

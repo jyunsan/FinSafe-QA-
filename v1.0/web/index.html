@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FinSafe-QA V1.0</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="query-panel">
+        <div class="brand">
+          <div>
+            <p class="eyebrow">FinSafe-QA V1.0</p>
+            <h1>可信金融问数助手</h1>
+          </div>
+          <span class="source">AkShare / 同花顺公开财务数据</span>
+        </div>
+
+        <form id="queryForm" class="query-box">
+          <input
+            id="question"
+            name="question"
+            value="药明康德2025年第三季度营业总收入是多少"
+            autocomplete="off"
+          />
+          <button type="submit">查询</button>
+        </form>
+
+        <div class="examples">
+          <button data-q="2025年第三季度营业总收入最高的3家企业是哪些？">Top3 收入</button>
+          <button data-q="2025年第三季度，10家公司的平均销售毛利率是多少？">平均毛利率</button>
+          <button data-q="药明康德2025年第三季度研发费用是多少">研发费用</button>
+          <button data-q="计算2025年第三季度10家公司的资产负债率行业均值">资产负债率均值</button>
+        </div>
+      </section>
+
+      <section class="result-grid">
+        <article class="panel answer-panel">
+          <div class="panel-title">
+            <span>自然语言回答</span>
+            <strong id="confidence">-</strong>
+          </div>
+          <p id="answer" class="answer">等待查询...</p>
+          <div class="meta">
+            <span id="queryId">Query ID: -</span>
+            <span id="score">Score: -</span>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">SQL 可见</div>
+          <pre id="sql">-</pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">结构化结果</div>
+          <div id="table"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-title">可信层</div>
+          <div id="trust"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
